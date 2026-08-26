@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Home in Emporia, VA — Sponsored Residential Opening | Arch Support Residential Services</title>
+<meta name="description" content="Meet a Sponsored Residential Provider in Emporia, Virginia with an opening for a new individual. Outdoor living, a warm home, and a rural community — presented by Arch Support Residential Services.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Petit+Formal+Script&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --green-deep:#00402F;
+    --green:#005C43;
+    --green-soft:#0A6B4E;
+    --ink:#1A1817;
+    --cream:#FAF7F0;
+    --cream-2:#F1ECE1;
+    --gold:#C9A24B;
+    --gold-soft:#E4CD8E;
+    --line: rgba(255,255,255,0.16);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--cream);
+    color:var(--ink);
+    font-family:'Work Sans', -apple-system, sans-serif;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{
+    font-family:'Fraunces', serif;
+    font-weight:700;
+    margin:0;
+    letter-spacing:-0.01em;
+  }
+  .script{
+    font-family:'Petit Formal Script', cursive;
+    font-weight:400;
+  }
+  a{color:inherit;}
+  img{max-width:100%; display:block;}
+  .wrap{max-width:1120px; margin:0 auto; padding:0 24px;}
+
+  /* Header */
+  header{
+    background:var(--ink);
+    padding:18px 0;
+    border-bottom:3px solid var(--green);
+  }
+  header .wrap{display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap;}
+  .logo-mark{display:flex; align-items:center; gap:14px;}
+  .logo-mark img{height:56px; width:auto; border-radius:6px;}
+  .logo-text{color:var(--cream); font-family:'Fraunces',serif; font-size:15px; line-height:1.3;}
+  .logo-text strong{display:block; font-size:17px; letter-spacing:0.02em;}
+  .header-tag{
+    color:var(--gold-soft);
+    font-size:13px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    font-weight:600;
+  }
+
+  /* Hero — arch motif */
+  .hero{
+    background: radial-gradient(120% 140% at 15% 0%, var(--green-soft) 0%, var(--green-deep) 55%, var(--ink) 100%);
+    color:var(--cream);
+    padding:64px 0 80px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero .wrap{
+    display:grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap:56px;
+    align-items:center;
+  }
+  .eyebrow{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    font-size:13px;
+    letter-spacing:0.16em;
+    text-transform:uppercase;
+    color:var(--gold-soft);
+    font-weight:600;
+    margin-bottom:18px;
+  }
+  .eyebrow::before{
+    content:"";
+    width:28px; height:1px;
+    background:var(--gold-soft);
+    display:inline-block;
+  }
+  .hero h1{
+    font-size:clamp(34px, 4.6vw, 54px);
+    line-height:1.06;
+    color:#fff;
+  }
+  .hero .script-line{
+    display:block;
+    font-size:clamp(24px, 3vw, 32px);
+    color:var(--gold-soft);
+    margin-top:6px;
+  }
+  .hero p.lede{
+    margin-top:22px;
+    font-size:17px;
+    max-width:46ch;
+    color:rgba(250,247,240,0.88);
+  }
+  .hero-cta{
+    margin-top:30px;
+    display:flex;
+    gap:14px;
+    flex-wrap:wrap;
+  }
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    padding:14px 26px;
+    border-radius:999px;
+    font-weight:600;
+    font-size:15px;
+    text-decoration:none;
+    transition:transform .15s ease, box-shadow .15s ease;
+    border:1px solid transparent;
+  }
+  .btn:hover{transform:translateY(-2px);}
+  .btn-primary{
+    background:var(--gold-soft);
+    color:var(--ink);
+    box-shadow:0 8px 24px rgba(0,0,0,0.25);
+  }
+  .btn-ghost{
+    border-color:rgba(250,247,240,0.4);
+    color:var(--cream);
+  }
+
+  /* Arch-framed video */
+  .video-arch{
+    position:relative;
+    justify-self:center;
+    width:100%;
+    max-width:340px;
+  }
+  .arch-frame{
+    background:var(--cream);
+    padding:10px 10px 0 10px;
+    border-radius: 160px 160px 18px 18px;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.35);
+    border: 3px solid var(--gold-soft);
+  }
+  .arch-frame video{
+    width:100%;
+    display:block;
+    border-radius: 150px 150px 8px 8px;
+    background:#000;
+    aspect-ratio: 1080 / 1920;
+  }
+  .video-caption{
+    text-align:center;
+    color:var(--gold-soft);
+    font-size:13px;
+    margin-top:14px;
+    letter-spacing:0.04em;
+  }
+
+  /* Section headings */
+  .section{padding:76px 0;}
+  .section-head{
+    max-width:640px;
+    margin:0 auto 40px;
+    text-align:center;
+  }
+  .section-head .eyebrow{color:var(--green); justify-content:center;}
+  .section-head .eyebrow::before{background:var(--green);}
+  .section-head h2{
+    font-size:clamp(26px,3.4vw,36px);
+    color:var(--ink);
+  }
+
+  /* About */
+  .about{background:var(--cream);}
+  .about-grid{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap:48px;
+    align-items:start;
+  }
+  .about p{font-size:16.5px; color:#3a3733; margin:0 0 16px;}
+  .about p:last-child{margin-bottom:0;}
+  .pull{
+    font-family:'Fraunces',serif;
+    font-size:22px;
+    line-height:1.4;
+    color:var(--green-deep);
+    border-left:3px solid var(--gold);
+    padding-left:20px;
+    margin:0;
+  }
+
+  /* Highlights */
+  .highlights{background:var(--cream-2);}
+  .hl-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(210px,1fr));
+    gap:20px;
+  }
+  .hl-card{
+    background:#fff;
+    border-radius:14px;
+    padding:26px 22px;
+    border:1px solid #e6e0d0;
+  }
+  .hl-card .icon{
+    width:40px; height:40px;
+    border-radius:10px;
+    background:var(--green);
+    display:flex; align-items:center; justify-content:center;
+    margin-bottom:14px;
+  }
+  .hl-card .icon svg{width:20px; height:20px; stroke:var(--cream); fill:none; stroke-width:2;}
+  .hl-card h3{font-size:16px; font-family:'Work Sans',sans-serif; font-weight:700; margin-bottom:6px;}
+  .hl-card p{font-size:14px; color:#5b564f; margin:0;}
+
+  .community-note{
+    margin-top:34px;
+    background:var(--green-deep);
+    color:var(--cream);
+    border-radius:16px;
+    padding:26px 30px;
+    display:flex;
+    gap:18px;
+    align-items:center;
+    flex-wrap:wrap;
+  }
+  .community-note svg{width:28px; height:28px; stroke:var(--gold-soft); fill:none; stroke-width:1.6; flex-shrink:0;}
+  .community-note p{margin:0; font-size:15px; color:rgba(250,247,240,0.92);}
+
+  /* Gallery */
+  .gallery{background:var(--cream);}
+  .gal-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:16px;
+  }
+  .gal-item{
+    position:relative;
+    border-radius:14px;
+    overflow:hidden;
+    aspect-ratio:4/5;
+    box-shadow:0 6px 18px rgba(0,0,0,0.08);
+  }
+  .gal-item img{
+    width:100%; height:100%; object-fit:cover;
+    transition:transform .5s ease;
+  }
+  .gal-item:hover img{transform:scale(1.06);}
+  .gal-cap{
+    position:absolute; left:0; right:0; bottom:0;
+    padding:14px 14px 12px;
+    background:linear-gradient(0deg, rgba(0,0,0,0.72), rgba(0,0,0,0));
+    color:#fff;
+    font-size:13.5px;
+    font-weight:600;
+    letter-spacing:0.01em;
+  }
+  .gal-item.wide{grid-column:span 2; aspect-ratio:16/9;}
+  .gal-item.wide img{object-position:center 65%;}
+  .gal-item.concept img{object-position:center;}
+  .concept-badge{
+    position:absolute; top:12px; left:12px;
+    background:var(--gold-soft);
+    color:var(--ink);
+    font-size:11.5px;
+    font-weight:700;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    padding:6px 12px;
+    border-radius:999px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.25);
+  }
+
+  /* CTA / Contact */
+  .contact{
+    background:var(--ink);
+    color:var(--cream);
+    padding:80px 0;
+    position:relative;
+  }
+  .contact .wrap{
+    display:grid;
+    grid-template-columns:1.1fr 0.9fr;
+    gap:50px;
+    align-items:center;
+  }
+  .contact h2{color:#fff; font-size:clamp(26px,3.6vw,38px); line-height:1.15;}
+  .contact p.lede{color:rgba(250,247,240,0.8); font-size:16px; margin-top:16px; max-width:44ch;}
+  .contact-card{
+    background:var(--green-deep);
+    border-radius:18px;
+    padding:34px;
+    border:1px solid rgba(255,255,255,0.08);
+  }
+  .contact-row{
+    display:flex;
+    align-items:flex-start;
+    gap:14px;
+    padding:14px 0;
+    border-bottom:1px solid var(--line);
+  }
+  .contact-row:last-child{border-bottom:none;}
+  .contact-row svg{width:20px;height:20px;stroke:var(--gold-soft);fill:none;stroke-width:2;margin-top:2px; flex-shrink:0;}
+  .contact-row a{text-decoration:none; font-weight:600; font-size:16px;}
+  .contact-row .label{display:block; font-size:12px; text-transform:uppercase; letter-spacing:0.1em; color:var(--gold-soft); margin-bottom:3px;}
+
+  footer{
+    background:var(--ink);
+    border-top:1px solid var(--line);
+    padding:26px 0;
+    text-align:center;
+  }
+  footer p{
+    margin:0; font-size:13px; color:rgba(250,247,240,0.55);
+  }
+
+  @media (max-width: 860px){
+    .hero .wrap{grid-template-columns:1fr; text-align:center;}
+    .eyebrow{justify-content:center;}
+    .hero p.lede{margin-left:auto; margin-right:auto;}
+    .hero-cta{justify-content:center;}
+    .video-arch{max-width:280px;}
+    .about-grid{grid-template-columns:1fr;}
+    .contact .wrap{grid-template-columns:1fr;}
+    .gal-grid{grid-template-columns:repeat(2,1fr);}
+    .gal-item.wide{grid-column:span 2; aspect-ratio:16/10;}
+  }
+  @media (max-width: 520px){
+    .gal-grid{grid-template-columns:repeat(2,1fr);}
+    .section{padding:56px 0;}
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    .gal-item img{transition:none;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="logo-mark">
+      <img src="images/logo.jpg" alt="Arch Support Residential Services logo">
+      <div class="logo-text"><strong>Arch Support</strong>Residential Services</div>
+    </div>
+    <div class="header-tag">Sponsored Residential Provider</div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">Emporia, Virginia · 23847</span>
+      <h1>A home ready to welcome someone new<span class="script-line script">— come meet the family</span></h1>
+      <p class="lede">A Sponsored Residential Provider in Emporia has an opening for an individual, offering a quiet, safe, and highly accessible home built around outdoor living, family connection, and small-town community.</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="#contact">Ask About This Opening</a>
+        <a class="btn btn-ghost" href="#gallery">See the Home</a>
+      </div>
+    </div>
+    <div class="video-arch">
+      <div class="arch-frame">
+        <video controls playsinline preload="metadata" poster="images/video-poster.jpg">
+          <source src="video/sponsor-video.mp4" type="video/mp4">
+          Your browser doesn't support embedded video. <a href="video/sponsor-video.mp4">Download the video</a> instead.
+        </video>
+      </div>
+      <div class="video-caption">Meet the sponsor &amp; see the home</div>
+    </div>
+  </div>
+</section>
+
+<section class="section about">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">About This Home</span>
+      <h2>Person-centered care, built around nature and family</h2>
+    </div>
+    <div class="about-grid">
+      <div>
+        <p>Our home in Emporia, Virginia provides a quiet, safe, and highly accessible community tailored for individuals with special needs to live comfortably while staying deeply connected to family. Sponsored residential care here blends professional support with an enriching, small-town lifestyle.</p>
+        <p>As a Sponsor, we follow a person-centered approach, working with our individual and their family to help build the life they want. Our focus is on outdoor living — when the weather permits, we take full advantage of everything nature has to offer.</p>
+      </div>
+      <div>
+        <p class="pull">"Come join us in building a connection with our community and nature."</p>
+        <p style="margin-top:22px;">We have a charming backyard hobby farm where we raise chickens for fresh eggs, and our rural community offers movies, bowling, local festivals, fishing, and plenty of parks and playgrounds nearby.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section highlights">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Life at Home</span>
+      <h2>What everyday life looks like here</h2>
+    </div>
+    <div class="hl-grid">
+      <div class="hl-card">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M4 13a8 8 0 0116 0M2 13h20M12 3v2M6 21l1-4M18 21l-1-4M8 21h8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>Outdoor Grilling</h3>
+        <p>Deck-side cookouts whenever the weather cooperates.</p>
+      </div>
+      <div class="hl-card">
+        <div class="icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a13 13 0 010 18M12 3a13 13 0 000 18" stroke-linecap="round"/></svg></div>
+        <h3>Swimming Pool</h3>
+        <p>A backyard pool for warm-weather afternoons.</p>
+      </div>
+      <div class="hl-card">
+        <div class="icon"><svg viewBox="0 0 24 24"><rect x="3" y="8" width="18" height="8" rx="1"/><circle cx="8" cy="12" r="1"/><circle cx="16" cy="12" r="1"/></svg></div>
+        <h3>Billiards Table</h3>
+        <p>A covered pool table right out on the deck.</p>
+      </div>
+      <div class="hl-card">
+        <div class="icon"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="12" rx="1"/><path d="M8 21h8M12 17v4" stroke-linecap="round"/></svg></div>
+        <h3>Movie Nights</h3>
+        <p>Regular movie nights at home together.</p>
+      </div>
+      <div class="hl-card">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M4 20l6-16 6 16M14 20l3-8 3 8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>Yard Games</h3>
+        <p>Cornhole, giant Connect Four, and more on the deck.</p>
+      </div>
+      <div class="hl-card">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M12 3c3 3 5 6 5 9a5 5 0 01-10 0c0-3 2-6 5-9z"/></svg></div>
+        <h3>Gardening &amp; Hobby Farm</h3>
+        <p>Backyard chickens and fresh eggs, plus room to garden.</p>
+      </div>
+    </div>
+
+    <div class="community-note">
+      <svg viewBox="0 0 24 24"><path d="M3 11l9-7 9 7M5 10v10h14V10" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <p><strong>Out in the community:</strong> Emporia's rural surroundings offer movies, bowling, local festivals, fishing, and several parks and playgrounds nearby.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section gallery" id="gallery">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Take a Look</span>
+      <h2>Around the home</h2>
+    </div>
+    <div class="gal-grid">
+      <div class="gal-item wide"><img src="images/front.jpg" alt="Front porch of the home in Emporia, VA"><div class="gal-cap">Welcoming front porch</div></div>
+      <div class="gal-item"><img src="images/kitchen.jpg" alt="Kitchen"><div class="gal-cap">Kitchen</div></div>
+      <div class="gal-item"><img src="images/living.jpg" alt="Living room"><div class="gal-cap">Living room</div></div>
+      <div class="gal-item"><img src="images/deck.jpg" alt="Covered deck with pool table"><div class="gal-cap">Deck &amp; pool table</div></div>
+      <div class="gal-item"><img src="images/firepit.jpg" alt="Backyard fire pit"><div class="gal-cap">Fire pit</div></div>
+      <div class="gal-item wide"><img src="images/grill.jpg" alt="Grill, trampoline, and swing set in the backyard"><div class="gal-cap">Backyard grill &amp; play area</div></div>
+      <div class="gal-item"><img src="images/games.jpg" alt="Deck with yard games"><div class="gal-cap">Yard games</div></div>
+      <div class="gal-item wide concept">
+        <img src="images/concept-bedroom.jpg" alt="Design concept rendering of a bedroom, based on the current room">
+        <div class="concept-badge">Under Design</div>
+        <div class="gal-cap">Bedroom — enhanced concept based on the current room</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow" style="color:var(--gold-soft);">Interested In This Opening?</span>
+      <h2>Let's talk about whether this home is the right fit.</h2>
+      <p class="lede">Reach out to Anthony Archer at Arch Support Residential Services to learn more about this Sponsored Residential opening in Emporia, VA, or to start the referral conversation.</p>
+    </div>
+    <div class="contact-card">
+      <div class="contact-row">
+        <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.12.9.33 1.79.63 2.65a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.43-1.2a2 2 0 012.11-.45c.86.3 1.75.51 2.65.63A2 2 0 0122 16.92z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div><span class="label">Call or Text</span><a href="tel:+18043999709">(804) 399-9709</a></div>
+      </div>
+      <div class="contact-row">
+        <svg viewBox="0 0 24 24"><path d="M4 4h16v16H4V4z"/><path d="M4 6l8 7 8-7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div><span class="label">Email</span><a href="mailto:archera@archsupportres.com">archera@archsupportres.com</a></div>
+      </div>
+      <div class="contact-row">
+        <svg viewBox="0 0 24 24"><path d="M12 21s7-6.5 7-12a7 7 0 10-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>
+        <div><span class="label">Location</span>Emporia, Virginia 23847</div>
+      </div>
+      <div class="contact-row">
+        <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" stroke-linecap="round"/><circle cx="12" cy="7" r="4"/></svg>
+        <div><span class="label">Contact</span>Anthony Archer</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>Arch Support Residential Services · Sponsored Residential Provider Network · Emporia, VA</p>
+  </div>
+</footer>
+
+</body>
+</html>
