@@ -323,9 +323,7 @@
     margin-top:24px;
     padding:16px 26px;
     font-size:16px;
-    display:none;
   }
-  .text-interest-btn.is-mobile{display:inline-flex;}
 
   footer{
     background:var(--ink);
@@ -378,7 +376,10 @@
       <h1>A home ready to welcome someone new<span class="script-line script">— come meet the family</span></h1>
       <p class="lede">A Sponsored Residential Provider in Emporia has an opening for an individual, offering a quiet, safe, and highly accessible home built around outdoor living, family connection, and small-town community.</p>
       <div class="hero-cta">
-        <a class="btn btn-primary" href="#contact">Ask About This Opening</a>
+        <a class="btn btn-primary smart-interest-btn" href="mailto:archera@archsupportres.com?subject=Interested%20in%20Emporia%20Sponsor%20Opening&amp;body=Hi%20Anthony%2C%0D%0A%0D%0AI%27m%20reaching%20out%20about%20the%20Sponsored%20Residential%20opening%20in%20Emporia%2C%20VA%20(23847).%20I%27d%20like%20to%20learn%20more.%0D%0A%0D%0AThank%20you!">
+          <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" fill="none" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span class="btn-label">Email to Show Interest</span>
+        </a>
         <a class="btn btn-ghost" href="#gallery">See the Home</a>
       </div>
     </div>
@@ -506,9 +507,9 @@
         <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" stroke-linecap="round"/><circle cx="12" cy="7" r="4"/></svg>
         <div><span class="label">Contact</span>Anthony Archer</div>
       </div>
-      <a class="btn btn-primary text-interest-btn" href="sms:+18043999709?&amp;body=Hi%20Anthony%2C%20I%27m%20reaching%20out%20about%20the%20Sponsored%20Residential%20opening%20in%20Emporia%2C%20VA%20(23847)%20%E2%80%94%20I%27d%20like%20to%20learn%20more.">
+      <a class="btn btn-primary text-interest-btn smart-interest-btn" href="mailto:archera@archsupportres.com?subject=Interested%20in%20Emporia%20Sponsor%20Opening&amp;body=Hi%20Anthony%2C%0D%0A%0D%0AI%27m%20reaching%20out%20about%20the%20Sponsored%20Residential%20opening%20in%20Emporia%2C%20VA%20(23847).%20I%27d%20like%20to%20learn%20more.%0D%0A%0D%0AThank%20you!">
         <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" fill="none" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        Text to Show Interest
+        <span class="btn-label">Email to Show Interest</span>
       </a>
     </div>
   </div>
@@ -528,15 +529,19 @@
     });
   }
 
-  // Only show the text-to-interest button on devices that can actually
-  // hand off to a messaging app (phones/tablets), not desktop browsers.
-  var textBtn = document.querySelector('.text-interest-btn');
-  if (textBtn) {
-    var isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent) ||
-                   (navigator.maxTouchPoints > 1 && /Mac/i.test(navigator.userAgent));
-    if (isMobile) {
-      textBtn.classList.add('is-mobile');
-    }
+  // Smart interest buttons: text on mobile (sms: link, opens Messages
+  // pre-filled), email on desktop (mailto: link, opens the mail app
+  // pre-filled) — same underlying intent, whichever channel actually
+  // works on the visitor's device.
+  var isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent) ||
+                 (navigator.maxTouchPoints > 1 && /Mac/i.test(navigator.userAgent));
+  var smsHref = "sms:+18043999709?&body=Hi%20Anthony%2C%20I%27m%20reaching%20out%20about%20the%20Sponsored%20Residential%20opening%20in%20Emporia%2C%20VA%20(23847)%20%E2%80%94%20I%27d%20like%20to%20learn%20more.";
+  if (isMobile) {
+    document.querySelectorAll('.smart-interest-btn').forEach(function (btn) {
+      btn.setAttribute('href', smsHref);
+      var label = btn.querySelector('.btn-label');
+      if (label) { label.textContent = 'Text to Show Interest'; }
+    });
   }
 </script>
 </body>
