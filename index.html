@@ -323,7 +323,9 @@
     margin-top:24px;
     padding:16px 26px;
     font-size:16px;
+    display:none;
   }
+  .text-interest-btn.is-mobile{display:inline-flex;}
 
   footer{
     background:var(--ink);
@@ -524,6 +526,17 @@
     sponsorVideo.addEventListener('ended', function () {
       sponsorVideo.currentTime = 0;
     });
+  }
+
+  // Only show the text-to-interest button on devices that can actually
+  // hand off to a messaging app (phones/tablets), not desktop browsers.
+  var textBtn = document.querySelector('.text-interest-btn');
+  if (textBtn) {
+    var isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent) ||
+                   (navigator.maxTouchPoints > 1 && /Mac/i.test(navigator.userAgent));
+    if (isMobile) {
+      textBtn.classList.add('is-mobile');
+    }
   }
 </script>
 </body>
