@@ -114,7 +114,9 @@ exports.handler = async function (event) {
     if (!res.ok) {
       const errText = await res.text();
       console.error("subscribe: Notion write failed", res.status, errText);
-      return { statusCode: 502, headers: cors, body: JSON.stringify({ error: "Could not save signup" }) };
+      // TEMPORARY: surface the real Notion error while debugging the form.
+      // Remove the `detail` field once this is confirmed working.
+      return { statusCode: 502, headers: cors, body: JSON.stringify({ error: "Could not save signup", detail: `${res.status}: ${errText}` }) };
     }
 
     return { statusCode: 200, headers: cors, body: JSON.stringify({ ok: true }) };

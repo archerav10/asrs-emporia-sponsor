@@ -833,7 +833,9 @@
             form.reset();
             syncFields();
           } else {
-            statusEl.textContent = (result.data && result.data.error) || 'Something went wrong. Please try again.';
+            var errMsg = (result.data && result.data.error) || 'Something went wrong. Please try again.';
+            if (result.data && result.data.detail) { errMsg += ' [' + result.data.detail + ']'; }
+            statusEl.textContent = errMsg;
             statusEl.className = 'updates-status err';
           }
         })
