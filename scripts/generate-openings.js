@@ -1,4 +1,66 @@
-<!DOCTYPE html>
+#!/usr/bin/env node
+// Regenerates openings/index.html (the "Current Openings" vacancies hub)
+// from data/vacancies.json. That JSON file is expected to be refreshed
+// from the "Home Vacancies" Notion database before this script runs
+// (see scripts/sync-vacancies-from-notion.md for the scheduled job that
+// does that). Only homes with status "Open" are listed, sorted by
+// openingDate ascending (earliest opening first).
+//
+// Usage: node scripts/generate-openings.js
+
+const fs = require("fs");
+const path = require("path");
+
+const DATA_PATH = path.join(__dirname, "..", "data", "vacancies.json");
+const OUTPUT_PATH = path.join(__dirname, "..", "openings", "index.html");
+
+function esc(s) {
+  return String(s == null ? "" : s)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
+}
+
+function formatPosted(dateStr) {
+  if (!dateStr) return "Opening posted";
+  const d = new Date(dateStr + "T00:00:00");
+  if (isNaN(d.getTime())) return "Opening posted";
+  return d.toLocaleDateString("en-US", { month: "long", year: "numeric" });
+}
+
+function renderCard(home) {
+  const href = esc(home.pagePath || "#");
+  const photo = esc(home.photoPath || "");
+  const name = esc(home.cityState || home.name || "");
+  const zip = esc(home.zip || "");
+  const desc = esc(home.description || "");
+  const posted = esc(formatPosted(home.openingDate));
+  return `      <a class="listing-card" href="${href}">
+        <div class="listing-photo">
+          <img src="../${photo}" alt="Photo of the home in ${name}">
+          <span class="listing-badge">Open Now</span>
+        </div>
+        <div class="listing-body">
+          <div class="listing-location">${name}</div>
+          <div class="listing-posted">${zip} · ${posted}</div>
+          <p class="listing-desc">${desc}</p>
+          <span class="listing-link">
+            View this home
+            <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </div>
+      </a>`;
+}
+
+function renderEmptyState() {
+  return `      <div class="empty-state">
+        <p>No open Sponsored Residential vacancies right now — check back soon, or sign up below to be notified the moment one opens.</p>
+      </div>`;
+}
+
+function buildPage(cardsHtml) {
+  return `<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -237,37 +299,7 @@
   <div class="wrap">
 
     <div class="listings">
-      <a class="listing-card" href="/">
-        <div class="listing-photo">
-          <img src="../images/front.jpg" alt="Photo of the home in Emporia, VA">
-          <span class="listing-badge">Open Now</span>
-        </div>
-        <div class="listing-body">
-          <div class="listing-location">Emporia, VA</div>
-          <div class="listing-posted">23847 · August 2026</div>
-          <p class="listing-desc">A quiet, rural home built around outdoor living — a backyard hobby farm, deck-side cookouts, and a small-town community close by.</p>
-          <span class="listing-link">
-            View this home
-            <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </span>
-        </div>
-      </a>
-
-      <a class="listing-card" href="/highland-springs/">
-        <div class="listing-photo">
-          <img src="../images/highland-springs/front-exterior.jpg" alt="Photo of the home in Highland Springs, VA">
-          <span class="listing-badge">Open Now</span>
-        </div>
-        <div class="listing-body">
-          <div class="listing-location">Highland Springs, VA</div>
-          <div class="listing-posted">23075 · September 2026</div>
-          <p class="listing-desc">A comfortable home just outside Richmond, with a huge backyard, a grilling deck, and a finished basement rec room with a pool table.</p>
-          <span class="listing-link">
-            View this home
-            <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </span>
-        </div>
-      </a>
+${cardsHtml}
     </div>
 
     <div class="cta-strip">
@@ -289,3 +321,27 @@
 
 </body>
 </html>
+`;
+}
+
+function main() {
+  const raw = fs.readFileSync(DATA_PATH, "utf8");
+  const homes = JSON.parse(raw);
+
+  const openHomes = homes
+    .filter((h) => (h.status || "").toLowerCase() === "open")
+    .sort((a, b) => new Date(a.openingDate) - new Date(b.openingDate));
+
+  const cardsHtml = openHomes.length
+    ? openHomes.map(renderCard).join("\n\n")
+    : renderEmptyState();
+
+  const html = buildPage(cardsHtml);
+  fs.writeFileSync(OUTPUT_PATH, html, "utf8");
+  console.log(
+    `Wrote ${OUTPUT_PATH} with ${openHomes.length} open home(s): ` +
+      openHomes.map((h) => h.name).join(", ")
+  );
+}
+
+main();
