@@ -6,7 +6,7 @@
 // function never talks to Constant Contact directly and stays fast/simple
 // for the visitor.
 
-const NOTION_VERSION = "2022-06-28";
+const NOTION_VERSION = "2025-09-03";
 const SIGNUPS_DATA_SOURCE_ID = "204472f4-1508-4484-90be-37a4fee9ce05";
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
