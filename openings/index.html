@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Current Openings | Arch Support Residential Services</title>
+<meta name="description" content="Current Sponsored Residential Provider openings from Arch Support Residential Services. See every home with an opening and learn more about each one.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Petit+Formal+Script&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --green-deep:#00402F;
+    --green:#005C43;
+    --green-soft:#0A6B4E;
+    --ink:#1A1817;
+    --cream:#FAF7F0;
+    --cream-2:#F1ECE1;
+    --gold:#C9A24B;
+    --gold-soft:#E4CD8E;
+    --line: rgba(255,255,255,0.16);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--cream);
+    color:var(--ink);
+    font-family:'Work Sans', -apple-system, sans-serif;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{
+    font-family:'Fraunces', serif;
+    font-weight:700;
+    margin:0;
+    letter-spacing:-0.01em;
+  }
+  a{color:inherit;}
+  img{max-width:100%; display:block;}
+  .wrap{max-width:1120px; margin:0 auto; padding:0 24px;}
+
+  header{
+    background:var(--ink);
+    padding:18px 0;
+    border-bottom:3px solid var(--green);
+  }
+  header .wrap{display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap;}
+  .logo-mark{display:flex; align-items:center; gap:14px;}
+  .logo-mark img{height:56px; width:auto; border-radius:6px;}
+  .logo-text{color:var(--cream); font-family:'Fraunces',serif; font-size:15px; line-height:1.3;}
+  .logo-text strong{display:block; font-size:17px; letter-spacing:0.02em;}
+  .header-tag{
+    color:var(--gold-soft);
+    font-size:13px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    font-weight:600;
+  }
+
+  .hero{
+    background: radial-gradient(120% 140% at 15% 0%, var(--green-soft) 0%, var(--green-deep) 55%, var(--ink) 100%);
+    color:var(--cream);
+    padding:64px 0 60px;
+    text-align:center;
+  }
+  .eyebrow{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    font-size:13px;
+    letter-spacing:0.16em;
+    text-transform:uppercase;
+    color:var(--gold-soft);
+    font-weight:600;
+    margin-bottom:18px;
+  }
+  .eyebrow::before{
+    content:"";
+    width:28px; height:1px;
+    background:var(--gold-soft);
+    display:inline-block;
+  }
+  .hero h1{
+    font-size:clamp(30px, 4.2vw, 46px);
+    line-height:1.1;
+    color:#fff;
+    max-width:16ch;
+    margin:0 auto;
+  }
+  .hero p.lede{
+    margin:18px auto 0;
+    font-size:16.5px;
+    max-width:52ch;
+    color:rgba(250,247,240,0.88);
+  }
+
+  .section{padding:70px 0 84px;}
+
+  .listings{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(320px, 1fr));
+    gap:28px;
+  }
+  .listing-card{
+    display:block;
+    background:#fff;
+    border:1px solid #E3DDCF;
+    border-radius:18px;
+    overflow:hidden;
+    text-decoration:none;
+    color:inherit;
+    box-shadow:0 10px 30px rgba(0,0,0,0.06);
+    transition:transform .18s ease, box-shadow .18s ease;
+  }
+  .listing-card:hover{
+    transform:translateY(-3px);
+    box-shadow:0 16px 40px rgba(0,0,0,0.1);
+  }
+  .listing-photo{
+    position:relative;
+    aspect-ratio:4/3;
+    overflow:hidden;
+    background:var(--cream-2);
+  }
+  .listing-photo img{width:100%; height:100%; object-fit:cover;}
+  .listing-badge{
+    position:absolute; top:14px; left:14px;
+    background:var(--gold-soft);
+    color:var(--ink);
+    font-size:11px;
+    font-weight:800;
+    letter-spacing:0.07em;
+    text-transform:uppercase;
+    padding:6px 12px;
+    border-radius:999px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.2);
+  }
+  .listing-body{padding:22px 24px 26px;}
+  .listing-location{
+    font-family:'Fraunces',serif;
+    font-weight:700;
+    font-size:20px;
+    color:var(--green-deep);
+    margin-bottom:4px;
+  }
+  .listing-posted{
+    font-size:12.5px;
+    color:#8a8478;
+    text-transform:uppercase;
+    letter-spacing:0.06em;
+    font-weight:600;
+    margin-bottom:12px;
+  }
+  .listing-desc{
+    font-size:14.5px;
+    color:#3a3733;
+    margin:0 0 16px;
+  }
+  .listing-link{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    font-size:14px;
+    font-weight:700;
+    color:var(--green-deep);
+  }
+  .listing-link svg{width:16px; height:16px; stroke:var(--green-deep); fill:none; stroke-width:2.4;}
+
+  .empty-state{
+    text-align:center;
+    padding:60px 20px;
+    background:#fff;
+    border:1px dashed #E3DDCF;
+    border-radius:18px;
+    color:#5b564f;
+  }
+
+  .cta-strip{
+    margin-top:56px;
+    background:var(--green-deep);
+    color:var(--cream);
+    border-radius:18px;
+    padding:34px 36px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:24px;
+    flex-wrap:wrap;
+  }
+  .cta-strip h3{color:#fff; font-size:20px; margin-bottom:6px;}
+  .cta-strip p{margin:0; font-size:14.5px; color:rgba(250,247,240,0.85);}
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    padding:13px 24px;
+    border-radius:999px;
+    font-weight:700;
+    font-size:14.5px;
+    text-decoration:none;
+    background:var(--gold-soft);
+    color:var(--ink);
+    white-space:nowrap;
+  }
+
+  footer{
+    background:var(--ink);
+    border-top:1px solid var(--line);
+    padding:26px 0;
+    text-align:center;
+  }
+  footer p{margin:0; font-size:13px; color:rgba(250,247,240,0.55);}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="logo-mark">
+      <img src="../images/logo.jpg" alt="Arch Support Residential Services logo">
+      <div class="logo-text"><strong>Arch Support</strong>Residential Services</div>
+    </div>
+    <div class="header-tag">Sponsored Residential Provider</div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <span class="eyebrow">Current Openings</span>
+    <h1>Homes with a Sponsored Residential opening right now</h1>
+    <p class="lede">Below are every one of our homes currently looking for a Sponsored Residential Provider match. Tap a home to see photos, amenities, and how to get in touch — sorted with the newest opening first.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+
+    <div class="listings">
+
+      <a class="listing-card" href="/">
+        <div class="listing-photo">
+          <img src="../images/front.jpg" alt="Front porch of the home in Emporia, VA">
+          <span class="listing-badge">Open Now</span>
+        </div>
+        <div class="listing-body">
+          <div class="listing-location">Emporia, VA</div>
+          <div class="listing-posted">23847 · Opening posted</div>
+          <p class="listing-desc">A quiet, rural home built around outdoor living — a backyard hobby farm, deck-side cookouts, and a small-town community close by.</p>
+          <span class="listing-link">
+            View this home
+            <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </div>
+      </a>
+
+      <a class="listing-card" href="/highland-springs/">
+        <div class="listing-photo">
+          <img src="../images/highland-springs/front-exterior.jpg" alt="Front exterior of the home in Highland Springs, VA">
+          <span class="listing-badge">Open Now</span>
+        </div>
+        <div class="listing-body">
+          <div class="listing-location">Highland Springs, VA</div>
+          <div class="listing-posted">23075 · Opening posted</div>
+          <p class="listing-desc">A comfortable home just outside Richmond, with a huge backyard, a grilling deck, and a finished basement rec room with a pool table.</p>
+          <span class="listing-link">
+            View this home
+            <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </div>
+      </a>
+
+    </div>
+
+    <div class="cta-strip">
+      <div>
+        <h3>Don't see an opening near you yet?</h3>
+        <p>Sign up for text or email updates and we'll reach out the moment a new home opens.</p>
+      </div>
+      <a class="btn" href="/#updates">Get Updates</a>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>Arch Support Residential Services · Sponsored Residential Provider Network</p>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Home in Highland Springs, VA — Sponsored Residential Opening | Arch Support Residential Services</title>
+<meta name="description" content="Meet a Sponsored Residential Provider in Highland Springs, Virginia with an opening for a new individual. Outdoor living, a warm home, and an easy drive to Richmond — presented by Arch Support Residential Services.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Petit+Formal+Script&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --green-deep:#00402F;
+    --green:#005C43;
+    --green-soft:#0A6B4E;
+    --ink:#1A1817;
+    --cream:#FAF7F0;
+    --cream-2:#F1ECE1;
+    --gold:#C9A24B;
+    --gold-soft:#E4CD8E;
+    --line: rgba(255,255,255,0.16);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--cream);
+    color:var(--ink);
+    font-family:'Work Sans', -apple-system, sans-serif;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{
+    font-family:'Fraunces', serif;
+    font-weight:700;
+    margin:0;
+    letter-spacing:-0.01em;
+  }
+  .script{
+    font-family:'Petit Formal Script', cursive;
+    font-weight:400;
+  }
+  a{color:inherit;}
+  img{max-width:100%; display:block;}
+  .wrap{max-width:1120px; margin:0 auto; padding:0 24px;}
+
+  header{
+    background:var(--ink);
+    padding:18px 0;
+    border-bottom:3px solid var(--green);
+  }
+  header .wrap{display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap;}
+  .logo-mark{display:flex; align-items:center; gap:14px;}
+  .logo-mark img{height:56px; width:auto; border-radius:6px;}
+  .logo-text{color:var(--cream); font-family:'Fraunces',serif; font-size:15px; line-height:1.3;}
+  .logo-text strong{display:block; font-size:17px; letter-spacing:0.02em;}
+  .header-tag{
+    color:var(--gold-soft);
+    font-size:13px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    font-weight:600;
+  }
+
+  .hero{
+    background: radial-gradient(120% 140% at 15% 0%, var(--green-soft) 0%, var(--green-deep) 55%, var(--ink) 100%);
+    color:var(--cream);
+    padding:64px 0 80px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero .wrap{
+    display:grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap:56px;
+    align-items:center;
+  }
+  .eyebrow{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    font-size:13px;
+    letter-spacing:0.16em;
+    text-transform:uppercase;
+    color:var(--gold-soft);
+    font-weight:600;
+    margin-bottom:18px;
+  }
+  .eyebrow::before{
+    content:"";
+    width:28px; height:1px;
+    background:var(--gold-soft);
+    display:inline-block;
+  }
+  .hero h1{
+    font-size:clamp(34px, 4.6vw, 54px);
+    line-height:1.06;
+    color:#fff;
+  }
+  .hero .script-line{
+    display:block;
+    font-size:clamp(24px, 3vw, 32px);
+    color:var(--gold-soft);
+    margin-top:6px;
+  }
+  .hero p.lede{
+    margin-top:22px;
+    font-size:17px;
+    max-width:46ch;
+    color:rgba(250,247,240,0.88);
+  }
+  .hero-cta{
+    margin-top:30px;
+    display:flex;
+    gap:14px;
+    flex-wrap:wrap;
+  }
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    padding:14px 26px;
+    border-radius:999px;
+    font-weight:600;
+    font-size:15px;
+    text-decoration:none;
+    transition:transform .15s ease, box-shadow .15s ease;
+    border:1px solid transparent;
+  }
+  .btn:hover{transform:translateY(-2px);}
+  .btn-primary{
+    background:var(--gold-soft);
+    color:var(--ink);
+    box-shadow:0 8px 24px rgba(0,0,0,0.25);
+  }
+  .btn-ghost{
+    border-color:rgba(250,247,240,0.4);
+    color:var(--cream);
+  }
+
+  .hero-photo{
+    position:relative;
+    justify-self:center;
+    width:100%;
+    max-width:380px;
+  }
+  .hero-photo .frame{
+    background:var(--cream);
+    padding:10px;
+    border-radius:18px;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.35);
+    border: 3px solid var(--gold-soft);
+  }
+  .hero-photo img{
+    width:100%;
+    display:block;
+    border-radius:10px;
+    aspect-ratio: 4/3;
+    object-fit:cover;
+  }
+  .hero-photo-caption{
+    text-align:center;
+    color:var(--gold-soft);
+    font-size:13px;
+    margin-top:14px;
+    letter-spacing:0.04em;
+  }
+
+  .section{padding:76px 0;}
+  .section-head{
+    max-width:640px;
+    margin:0 auto 40px;
+    text-align:center;
+  }
+  .section-head .eyebrow{color:var(--green); justify-content:center;}
+  .section-head .eyebrow::before{background:var(--green);}
+  .section-head h2{
+    font-size:clamp(26px,3.4vw,36px);
+    color:var(--ink);
+  }
+
+  .about{background:var(--cream);}
+  .about-grid{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap:48px;
+    align-items:start;
+  }
+  .about p{font-size:16.5px; color:#3a3733; margin:0 0 16px;}
+  .about p:last-child{margin-bottom:0;}
+  .pull{
+    font-family:'Fraunces',serif;
+    font-size:22px;
+    line-height:1.4;
+    color:var(--green-deep);
+    border-left:3px solid var(--gold);
+    padding-left:20px;
+    margin:0;
+  }
+
+  .highlights{background:var(--cream-2);}
+  .hl-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(210px,1fr));
+    gap:20px;
+  }
+  .hl-card{
+    background:#fff;
+    border-radius:14px;
+    padding:26px 22px;
+    border:1px solid #e6e0d0;
+  }
+  .hl-card .icon{
+    width:40px; height:40px;
+    border-radius:10px;
+    background:var(--green);
+    display:flex; align-items:center; justify-content:center;
+    margin-bottom:14px;
+  }
+  .hl-card .icon svg{width:20px; height:20px; stroke:var(--cream); fill:none; stroke-width:2;}
+  .hl-card h3{font-size:16px; font-family:'Work Sans',sans-serif; font-weight:700; margin-bottom:6px;}
+  .hl-card p{font-size:14px; color:#5b564f; margin:0;}
+
+  .community-note{
+    margin-top:34px;
+    background:var(--green-deep);
+    color:var(--cream);
+    border-radius:16px;
+    padding:26px 30px;
+    display:flex;
+    gap:18px;
+    align-items:center;
+    flex-wrap:wrap;
+  }
+  .community-note svg{width:28px; height:28px; stroke:var(--gold-soft); fill:none; stroke-width:1.6; flex-shrink:0;}
+  .community-note p{margin:0; font-size:15px; color:rgba(250,247,240,0.92);}
+
+  .gallery{background:var(--cream);}
+  .gal-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:16px;
+  }
+  .gal-item{
+    position:relative;
+    border-radius:14px;
+    overflow:hidden;
+    aspect-ratio:4/5;
+    box-shadow:0 6px 18px rgba(0,0,0,0.08);
+  }
+  .gal-item img{
+    width:100%; height:100%; object-fit:cover;
+    transition:transform .5s ease;
+  }
+  .gal-item:hover img{transform:scale(1.06);}
+  .gal-cap{
+    position:absolute; left:0; right:0; bottom:0;
+    padding:14px 14px 12px;
+    background:linear-gradient(0deg, rgba(0,0,0,0.72), rgba(0,0,0,0));
+    color:#fff;
+    font-size:13.5px;
+    font-weight:600;
+    letter-spacing:0.01em;
+  }
+  .gal-item.wide{grid-column:span 2; aspect-ratio:16/9;}
+  .gal-item.wide img{object-position:center 55%;}
+
+  .contact{
+    background:var(--ink);
+    color:var(--cream);
+    padding:80px 0;
+    position:relative;
+  }
+  .contact .wrap{
+    display:grid;
+    grid-template-columns:1.1fr 0.9fr;
+    gap:50px;
+    align-items:center;
+  }
+  .contact h2{color:#fff; font-size:clamp(26px,3.6vw,38px); line-height:1.15;}
+  .contact p.lede{color:rgba(250,247,240,0.8); font-size:16px; margin-top:16px; max-width:44ch;}
+  .contact-card{
+    background:var(--green-deep);
+    border-radius:18px;
+    padding:34px;
+    border:1px solid rgba(255,255,255,0.08);
+  }
+  .contact-row{
+    display:flex;
+    align-items:flex-start;
+    gap:14px;
+    padding:14px 0;
+    border-bottom:1px solid var(--line);
+  }
+  .contact-row:last-child{border-bottom:none;}
+  .contact-row svg{width:20px;height:20px;stroke:var(--gold-soft);fill:none;stroke-width:2;margin-top:2px; flex-shrink:0;}
+  .contact-row a{text-decoration:none; font-weight:600; font-size:16px;}
+  .contact-row .label{display:block; font-size:12px; text-transform:uppercase; letter-spacing:0.1em; color:var(--gold-soft); margin-bottom:3px;}
+  .text-interest-btn{
+    width:100%;
+    justify-content:center;
+    margin-top:24px;
+    padding:16px 26px;
+    font-size:16px;
+  }
+
+  .updates{
+    background:var(--cream);
+    padding:70px 0;
+  }
+  .updates .wrap{max-width:720px;}
+  .updates-head{text-align:center; margin-bottom:34px;}
+  .updates-head .eyebrow{color:var(--green); justify-content:center;}
+  .updates-head h2{font-size:clamp(24px,3.2vw,32px); line-height:1.2; margin:0 0 12px;}
+  .updates-head p{color:#5b564f; max-width:52ch; margin:0 auto; font-size:15.5px;}
+  .updates-card{
+    background:#fff;
+    border:1px solid #E3DDCF;
+    border-radius:18px;
+    padding:32px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.06);
+  }
+  .channel-select{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+    margin-bottom:22px;
+  }
+  .channel-opt{
+    display:block;
+    position:relative;
+    cursor:pointer;
+  }
+  .channel-opt input{
+    position:absolute;
+    opacity:0;
+    width:1px; height:1px;
+  }
+  .channel-opt .card{
+    display:block;
+    border:2px solid #E3DDCF;
+    border-radius:14px;
+    padding:16px 14px;
+    text-align:center;
+    transition:border-color .15s ease, background .15s ease, transform .1s ease;
+    height:100%;
+    box-sizing:border-box;
+  }
+  .channel-opt .card .title{font-weight:700; font-size:15px; color:var(--ink);}
+  .channel-opt .card .sub{font-size:12.5px; color:#7a746a; margin-top:4px;}
+  .channel-opt input:checked + .card{
+    border-color:var(--green);
+    background:rgba(0,92,67,0.06);
+  }
+  .channel-opt.recommended .card{border-color:var(--green-deep);}
+  .channel-opt.recommended .badge{
+    display:inline-block;
+    background:var(--gold);
+    color:var(--ink);
+    font-size:10px;
+    font-weight:800;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    padding:2px 8px;
+    border-radius:999px;
+    margin-bottom:6px;
+  }
+  .channel-opt.subtle{
+    grid-column:1 / -1;
+  }
+  .channel-opt.subtle .card{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    padding:10px 14px;
+    border-style:dashed;
+    border-color:#E3DDCF;
+  }
+  .channel-opt.subtle .title{font-size:13.5px; font-weight:600; color:#7a746a;}
+  .channel-opt.subtle input:checked + .card{
+    border-style:solid;
+    border-color:var(--green);
+    background:rgba(0,92,67,0.06);
+  }
+  .updates-form .field-group{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:14px;
+    margin-bottom:16px;
+  }
+  .updates-form .field-row{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:14px;
+  }
+  .updates-form label{
+    display:block;
+    font-size:12px;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:0.08em;
+    color:#7a746a;
+    margin-bottom:6px;
+  }
+  .updates-form input[type="text"],
+  .updates-form input[type="email"],
+  .updates-form input[type="tel"]{
+    width:100%;
+    padding:12px 14px;
+    border:1.5px solid #E3DDCF;
+    border-radius:10px;
+    font-size:15px;
+    font-family:inherit;
+    color:var(--ink);
+    background:#fff;
+  }
+  .updates-form input:focus{outline:none; border-color:var(--green);}
+  .updates-form .field-hidden{display:none;}
+  .updates-consent{
+    font-size:12px;
+    color:#8a8478;
+    line-height:1.5;
+    margin:4px 0 18px;
+  }
+  .updates-submit{
+    width:100%;
+    justify-content:center;
+    border:none;
+    cursor:pointer;
+    font-family:inherit;
+  }
+  .updates-submit:disabled{opacity:0.6; cursor:default;}
+  .updates-status{
+    margin-top:14px;
+    font-size:14px;
+    font-weight:600;
+    text-align:center;
+  }
+  .updates-status.ok{color:var(--green-deep);}
+  .updates-status.err{color:#a33d2c;}
+  .updates-honeypot{
+    position:absolute;
+    left:-9999px;
+    width:1px; height:1px;
+    overflow:hidden;
+  }
+  @media (max-width:520px){
+    .updates-form .field-row{grid-template-columns:1fr;}
+  }
+
+  footer{
+    background:var(--ink);
+    border-top:1px solid var(--line);
+    padding:26px 0;
+    text-align:center;
+  }
+  footer p{
+    margin:0; font-size:13px; color:rgba(250,247,240,0.55);
+  }
+
+  @media (max-width: 860px){
+    .hero .wrap{grid-template-columns:1fr; text-align:center;}
+    .eyebrow{justify-content:center;}
+    .hero p.lede{margin-left:auto; margin-right:auto;}
+    .hero-cta{justify-content:center;}
+    .hero-photo{max-width:320px;}
+    .about-grid{grid-template-columns:1fr;}
+    .contact .wrap{grid-template-columns:1fr;}
+    .gal-grid{grid-template-columns:repeat(2,1fr);}
+    .gal-item.wide{grid-column:span 2; aspect-ratio:16/10;}
+  }
+  @media (max-width: 520px){
+    .gal-grid{grid-template-columns:repeat(2,1fr);}
+    .section{padding:56px 0;}
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    .gal-item img{transition:none;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="logo-mark">
+      <img src="../images/logo.jpg" alt="Arch Support Residential Services logo">
+      <div class="logo-text"><strong>Arch Support</strong>Residential Services</div>
+    </div>
+    <div class="header-tag">Sponsored Residential Provider</div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">Highland Springs, Virginia · 23075</span>
+      <h1>A home ready to welcome someone new<span class="script-line script">— just outside Richmond</span></h1>
+      <p class="lede">A Sponsored Residential Provider in Highland Springs has an opening for an individual, offering a comfortable home built for outdoor living and relaxed evenings in, just a short drive from Richmond.</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary smart-interest-btn" href="mailto:archera@archsupportres.com?subject=Interested%20in%20Highland%20Springs%20Sponsor%20Opening&amp;body=Hi%20Anthony%2C%0D%0A%0D%0AI%27m%20reaching%20out%20about%20the%20Sponsored%20Residential%20opening%20in%20Highland%20Springs%2C%20VA%20(23075).%20I%27d%20like%20to%20learn%20more.%0D%0A%0D%0AThank%20you!">
+          <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" fill="none" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span class="btn-label">Email to Show Interest</span>
+        </a>
+        <a class="btn btn-ghost" href="#gallery">See the Home</a>
+      </div>
+    </div>
+    <div class="hero-photo">
+      <div class="frame">
+        <img src="../images/highland-springs/front-exterior.jpg" alt="Front exterior of the home in Highland Springs, VA">
+      </div>
+      <div class="hero-photo-caption">The home in Highland Springs</div>
+    </div>
+  </div>
+</section>
+
+<section class="section about">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">About This Home</span>
+      <h2>Person-centered care, close to the city and the outdoors</h2>
+    </div>
+    <div class="about-grid">
+      <div>
+        <p>Our home in Highland Springs, Virginia offers a comfortable, welcoming setting for individuals with special needs, just a short drive from Richmond while still feeling like a quiet residential neighborhood. Sponsored residential care here blends professional support with everyday comforts and a relaxed pace.</p>
+        <p>As a Sponsor, we follow a person-centered approach, working with our individual and their family to help build the life they want. The home is set up for outdoor living and cozy nights in alike — from grilling on the deck to movie nights streaming a favorite show.</p>
+      </div>
+      <div>
+        <p class="pull">"A comfortable place to call home, with room to relax outside and in."</p>
+        <p style="margin-top:22px;">A huge backyard, a covered patio and deck built for grilling, and a small fish pond make outdoor time easy. Inside, a finished basement rec room with a pool table gives everyone a place to unwind.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section highlights">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Life at Home</span>
+      <h2>What everyday life looks like here</h2>
+    </div>
+    <div class="hl-grid">
+      <div class="hl-card">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M4 13a8 8 0 0116 0M2 13h20M12 3v2M6 21l1-4M18 21l-1-4M8 21h8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>Outdoor Dining &amp; Patio</h3>
+        <p>A covered patio and deck set up with furniture for outdoor meals.</p>
+      </div>
+      <div class="hl-card">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M4 20l6-16 6 16M14 20l3-8 3 8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>Grilling Deck</h3>
+        <p>Grills and seating right on the deck for warm-weather cookouts.</p>
+      </div>
+      <div class="hl-card">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M3 11l9-7 9 7M5 10v10h14V10" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>Huge Backyard</h3>
+        <p>Plenty of room to relax, garden, or just get outside.</p>
+      </div>
+      <div class="hl-card">
+        <div class="icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a13 13 0 010 18M12 3a13 13 0 000 18" stroke-linecap="round"/></svg></div>
+        <h3>Backyard Fish Pond</h3>
+        <p>A small pond out back — a peaceful spot to sit and unwind.</p>
+      </div>
+      <div class="hl-card">
+        <div class="icon"><svg viewBox="0 0 24 24"><rect x="3" y="8" width="18" height="8" rx="1"/><circle cx="8" cy="12" r="1"/><circle cx="16" cy="12" r="1"/></svg></div>
+        <h3>Basement Rec Room</h3>
+        <p>A finished basement with a pool table and room to gather.</p>
+      </div>
+      <div class="hl-card">
+        <div class="icon"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="12" rx="1"/><path d="M8 21h8M12 17v4" stroke-linecap="round"/></svg></div>
+        <h3>WiFi &amp; Streaming</h3>
+        <p>Home WiFi plus Netflix, Prime Video, Disney+, and Hulu.</p>
+      </div>
+    </div>
+
+    <div class="community-note">
+      <svg viewBox="0 0 24 24"><path d="M3 11l9-7 9 7M5 10v10h14V10" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <p><strong>Out in the community:</strong> Highland Springs sits about 4.3 miles east of Richmond, with the Highland Springs Community Center &amp; Recreation Area nearby offering playgrounds, open fields, and picnic shelters — plus easy access to everything Henrico County and Richmond have to offer.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section gallery" id="gallery">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Take a Look</span>
+      <h2>Around the home</h2>
+    </div>
+    <div class="gal-grid">
+      <div class="gal-item wide"><img src="../images/highland-springs/front-exterior.jpg" alt="Front exterior of the home in Highland Springs, VA"><div class="gal-cap">Front of the home</div></div>
+      <div class="gal-item"><img src="../images/highland-springs/living-room.jpg" alt="Living room with fireplace and TV"><div class="gal-cap">Living room</div></div>
+      <div class="gal-item"><img src="../images/highland-springs/basement-rec-room.jpg" alt="Finished basement rec room with pool table"><div class="gal-cap">Basement rec room &amp; pool table</div></div>
+      <div class="gal-item wide"><img src="../images/highland-springs/bedroom-storage.jpg" alt="Bedroom with wardrobe storage"><div class="gal-cap">Bedroom storage</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow" style="color:var(--gold-soft);">Interested In This Opening?</span>
+      <h2>Let's talk about whether this home is the right fit.</h2>
+      <p class="lede">Reach out to Anthony Archer at Arch Support Residential Services to learn more about this Sponsored Residential opening in Highland Springs, VA, or to start the referral conversation.</p>
+    </div>
+    <div class="contact-card">
+      <div class="contact-row">
+        <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.12.9.33 1.79.63 2.65a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.43-1.2a2 2 0 012.11-.45c.86.3 1.75.51 2.65.63A2 2 0 0122 16.92z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div><span class="label">Call or Text</span><a href="tel:+18043999709">(804) 399-9709</a></div>
+      </div>
+      <div class="contact-row">
+        <svg viewBox="0 0 24 24"><path d="M4 4h16v16H4V4z"/><path d="M4 6l8 7 8-7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div><span class="label">Email</span><a href="mailto:archera@archsupportres.com">archera@archsupportres.com</a></div>
+      </div>
+      <div class="contact-row">
+        <svg viewBox="0 0 24 24"><path d="M12 21s7-6.5 7-12a7 7 0 10-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>
+        <div><span class="label">Location</span>Highland Springs, Virginia 23075</div>
+      </div>
+      <div class="contact-row">
+        <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" stroke-linecap="round"/><circle cx="12" cy="7" r="4"/></svg>
+        <div><span class="label">Contact</span>Anthony Archer</div>
+      </div>
+      <a class="btn btn-primary text-interest-btn smart-interest-btn" href="mailto:archera@archsupportres.com?subject=Interested%20in%20Highland%20Springs%20Sponsor%20Opening&amp;body=Hi%20Anthony%2C%0D%0A%0D%0AI%27m%20reaching%20out%20about%20the%20Sponsored%20Residential%20opening%20in%20Highland%20Springs%2C%20VA%20(23075).%20I%27d%20like%20to%20learn%20more.%0D%0A%0D%0AThank%20you!">
+        <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" fill="none" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span class="btn-label">Email to Show Interest</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="updates" id="updates">
+  <div class="wrap">
+    <div class="updates-head">
+      <span class="eyebrow">Stay In The Loop</span>
+      <h2>Get updates on Arch Support Residential Services openings</h2>
+      <p>New Sponsored Residential openings don't come up often. Sign up once and we'll reach out directly when a home like this one becomes available.</p>
+    </div>
+    <div class="updates-card">
+      <form class="updates-form" id="updatesForm" novalidate>
+        <div class="channel-select" role="radiogroup" aria-label="How should we send updates?">
+          <label class="channel-opt recommended">
+            <input type="radio" name="channel" value="Text" checked>
+            <span class="card">
+              <span class="badge">Fastest</span><br>
+              <span class="title">Text Me</span>
+              <span class="sub">A quick text the moment a home opens</span>
+            </span>
+          </label>
+          <label class="channel-opt">
+            <input type="radio" name="channel" value="Both">
+            <span class="card">
+              <span class="title">Text &amp; Email</span>
+              <span class="sub">Both, so you never miss one</span>
+            </span>
+          </label>
+          <label class="channel-opt subtle">
+            <input type="radio" name="channel" value="Email">
+            <span class="card">
+              <span class="title">Email only, if you'd rather not text</span>
+            </span>
+          </label>
+        </div>
+
+        <div class="field-group">
+          <div>
+            <label for="updName">Name</label>
+            <input type="text" id="updName" name="name" autocomplete="name" required>
+          </div>
+          <div class="field-row">
+            <div id="updPhoneWrap">
+              <label for="updPhone">Mobile phone</label>
+              <input type="tel" id="updPhone" name="phone" autocomplete="tel" placeholder="(804) 555-0123">
+            </div>
+            <div id="updEmailWrap" class="field-hidden">
+              <label for="updEmail">Email</label>
+              <input type="email" id="updEmail" name="email" autocomplete="email" placeholder="you@example.com">
+            </div>
+          </div>
+          <div class="updates-honeypot" aria-hidden="true">
+            <label for="updCompany">Company</label>
+            <input type="text" id="updCompany" name="company" tabindex="-1" autocomplete="off">
+          </div>
+        </div>
+
+        <p class="updates-consent">By signing up you agree to receive updates about Sponsored Residential openings from Arch Support Residential Services by the method(s) selected above. Msg &amp; data rates may apply. Reply STOP to unsubscribe at any time. We won't share your information.</p>
+
+        <button type="submit" class="btn btn-primary updates-submit" id="updatesSubmit">
+          <span class="btn-label">Sign Up for Updates</span>
+        </button>
+        <div class="updates-status" id="updatesStatus" role="status" aria-live="polite"></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>Arch Support Residential Services · Sponsored Residential Provider Network · Highland Springs, VA</p>
+  </div>
+</footer>
+
+<script>
+  // Smart interest buttons: text on mobile (sms: link, opens Messages
+  // pre-filled), email on desktop (mailto: link, opens the mail app
+  // pre-filled) — same underlying intent, whichever channel actually
+  // works on the visitor's device.
+  var isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent) ||
+                 (navigator.maxTouchPoints > 1 && /Mac/i.test(navigator.userAgent));
+  var smsHref = "sms:+18043999709?&body=Hi%20Anthony%2C%20I%27m%20reaching%20out%20about%20the%20Sponsored%20Residential%20opening%20in%20Highland%20Springs%2C%20VA%20(23075)%20%E2%80%94%20I%27d%20like%20to%20learn%20more.";
+  if (isMobile) {
+    document.querySelectorAll('.smart-interest-btn').forEach(function (btn) {
+      btn.setAttribute('href', smsHref);
+      var label = btn.querySelector('.btn-label');
+      if (label) { label.textContent = 'Text to Show Interest'; }
+    });
+  }
+
+  // Get Updates signup form — general/reusable component that POSTs to a
+  // Netlify Function, which stages the signup for sync into Constant
+  // Contact. Nudges visitors toward Text/Both by making Text the default,
+  // most prominent choice; Email-only is present but visually subdued.
+  (function () {
+    var form = document.getElementById('updatesForm');
+    if (!form) return;
+
+    var phoneWrap = document.getElementById('updPhoneWrap');
+    var emailWrap = document.getElementById('updEmailWrap');
+    var phoneInput = document.getElementById('updPhone');
+    var emailInput = document.getElementById('updEmail');
+    var statusEl = document.getElementById('updatesStatus');
+    var submitBtn = document.getElementById('updatesSubmit');
+
+    function syncFields() {
+      var channel = form.querySelector('input[name="channel"]:checked').value;
+      var showPhone = channel === 'Text' || channel === 'Both';
+      var showEmail = channel === 'Email' || channel === 'Both';
+      phoneWrap.classList.toggle('field-hidden', !showPhone);
+      emailWrap.classList.toggle('field-hidden', !showEmail);
+      phoneInput.required = showPhone;
+      emailInput.required = showEmail;
+    }
+    form.querySelectorAll('input[name="channel"]').forEach(function (r) {
+      r.addEventListener('change', syncFields);
+    });
+    syncFields();
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      statusEl.textContent = '';
+      statusEl.className = 'updates-status';
+
+      var channel = form.querySelector('input[name="channel"]:checked').value;
+      var name = document.getElementById('updName').value.trim();
+      var phone = phoneInput.value.trim();
+      var email = emailInput.value.trim();
+
+      if (!name) {
+        statusEl.textContent = 'Please enter your name.';
+        statusEl.className = 'updates-status err';
+        return;
+      }
+      if ((channel === 'Text' || channel === 'Both') && phone.replace(/\D/g, '').length < 10) {
+        statusEl.textContent = 'Please enter a valid 10-digit mobile number.';
+        statusEl.className = 'updates-status err';
+        return;
+      }
+      if ((channel === 'Email' || channel === 'Both') && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        statusEl.textContent = 'Please enter a valid email address.';
+        statusEl.className = 'updates-status err';
+        return;
+      }
+
+      submitBtn.disabled = true;
+      submitBtn.querySelector('.btn-label').textContent = 'Signing Up…';
+
+      fetch('/.netlify/functions/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: name,
+          phone: phone,
+          email: email,
+          channel: channel,
+          sourcePage: window.location.href,
+          company: document.getElementById('updCompany').value
+        })
+      })
+        .then(function (res) { return res.json().then(function (data) { return { ok: res.ok, data: data }; }); })
+        .then(function (result) {
+          if (result.ok) {
+            statusEl.textContent = "You're signed up — thank you!";
+            statusEl.className = 'updates-status ok';
+            form.reset();
+            syncFields();
+          } else {
+            statusEl.textContent = (result.data && result.data.error) || 'Something went wrong. Please try again.';
+            statusEl.className = 'updates-status err';
+          }
+        })
+        .catch(function () {
+          statusEl.textContent = 'Something went wrong. Please try again.';
+          statusEl.className = 'updates-status err';
+        })
+        .finally(function () {
+          submitBtn.disabled = false;
+          submitBtn.querySelector('.btn-label').textContent = 'Sign Up for Updates';
+        });
+    });
+  })();
+</script>
+</body>
+</html>
