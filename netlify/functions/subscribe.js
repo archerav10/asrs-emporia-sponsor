@@ -1,9 +1,10 @@
 // Netlify Function: subscribe
 // Receives sponsor-page "Get Updates" signups (name, email, phone, channel
 // preference) and writes them into the "Sponsor Page Signups" Notion
-// database. A separate scheduled function reads Pending rows from that
-// database and syncs them into Constant Contact, so this function never
-// talks to Constant Contact directly and stays fast/simple for the visitor.
+// database. A separate scheduled sync (run externally) reads Pending rows
+// from that database and syncs them into Constant Contact, so this
+// function never talks to Constant Contact directly and stays fast/simple
+// for the visitor.
 
 const NOTION_VERSION = "2022-06-28";
 const SIGNUPS_DATA_SOURCE_ID = "204472f4-1508-4484-90be-37a4fee9ce05";
