@@ -325,6 +325,152 @@
     font-size:16px;
   }
 
+  /* Get Updates signup (reusable across sponsor pages) */
+  .updates{
+    background:var(--cream);
+    padding:70px 0;
+  }
+  .updates .wrap{max-width:720px;}
+  .updates-head{text-align:center; margin-bottom:34px;}
+  .updates-head .eyebrow{color:var(--green); justify-content:center;}
+  .updates-head h2{font-size:clamp(24px,3.2vw,32px); line-height:1.2; margin:0 0 12px;}
+  .updates-head p{color:#5b564f; max-width:52ch; margin:0 auto; font-size:15.5px;}
+  .updates-card{
+    background:#fff;
+    border:1px solid #E3DDCF;
+    border-radius:18px;
+    padding:32px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.06);
+  }
+  .channel-select{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+    margin-bottom:22px;
+  }
+  .channel-opt{
+    display:block;
+    position:relative;
+    cursor:pointer;
+  }
+  .channel-opt input{
+    position:absolute;
+    opacity:0;
+    width:1px; height:1px;
+  }
+  .channel-opt .card{
+    display:block;
+    border:2px solid #E3DDCF;
+    border-radius:14px;
+    padding:16px 14px;
+    text-align:center;
+    transition:border-color .15s ease, background .15s ease, transform .1s ease;
+    height:100%;
+    box-sizing:border-box;
+  }
+  .channel-opt .card .title{font-weight:700; font-size:15px; color:var(--ink);}
+  .channel-opt .card .sub{font-size:12.5px; color:#7a746a; margin-top:4px;}
+  .channel-opt input:checked + .card{
+    border-color:var(--green);
+    background:rgba(0,92,67,0.06);
+  }
+  .channel-opt.recommended .card{border-color:var(--green-deep);}
+  .channel-opt.recommended .badge{
+    display:inline-block;
+    background:var(--gold);
+    color:var(--ink);
+    font-size:10px;
+    font-weight:800;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    padding:2px 8px;
+    border-radius:999px;
+    margin-bottom:6px;
+  }
+  .channel-opt.subtle{
+    grid-column:1 / -1;
+  }
+  .channel-opt.subtle .card{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    padding:10px 14px;
+    border-style:dashed;
+    border-color:#E3DDCF;
+  }
+  .channel-opt.subtle .title{font-size:13.5px; font-weight:600; color:#7a746a;}
+  .channel-opt.subtle input:checked + .card{
+    border-style:solid;
+    border-color:var(--green);
+    background:rgba(0,92,67,0.06);
+  }
+  .updates-form .field-group{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:14px;
+    margin-bottom:16px;
+  }
+  .updates-form .field-row{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:14px;
+  }
+  .updates-form label{
+    display:block;
+    font-size:12px;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:0.08em;
+    color:#7a746a;
+    margin-bottom:6px;
+  }
+  .updates-form input[type="text"],
+  .updates-form input[type="email"],
+  .updates-form input[type="tel"]{
+    width:100%;
+    padding:12px 14px;
+    border:1.5px solid #E3DDCF;
+    border-radius:10px;
+    font-size:15px;
+    font-family:inherit;
+    color:var(--ink);
+    background:#fff;
+  }
+  .updates-form input:focus{outline:none; border-color:var(--green);}
+  .updates-form .field-hidden{display:none;}
+  .updates-consent{
+    font-size:12px;
+    color:#8a8478;
+    line-height:1.5;
+    margin:4px 0 18px;
+  }
+  .updates-submit{
+    width:100%;
+    justify-content:center;
+    border:none;
+    cursor:pointer;
+    font-family:inherit;
+  }
+  .updates-submit:disabled{opacity:0.6; cursor:default;}
+  .updates-status{
+    margin-top:14px;
+    font-size:14px;
+    font-weight:600;
+    text-align:center;
+  }
+  .updates-status.ok{color:var(--green-deep);}
+  .updates-status.err{color:#a33d2c;}
+  .updates-honeypot{
+    position:absolute;
+    left:-9999px;
+    width:1px; height:1px;
+    overflow:hidden;
+  }
+  @media (max-width:520px){
+    .updates-form .field-row{grid-template-columns:1fr;}
+  }
+
   footer{
     background:var(--ink);
     border-top:1px solid var(--line);
@@ -515,6 +661,71 @@
   </div>
 </section>
 
+<section class="updates" id="updates">
+  <div class="wrap">
+    <div class="updates-head">
+      <span class="eyebrow">Stay In The Loop</span>
+      <h2>Get updates on Arch Support Residential Services openings</h2>
+      <p>New Sponsored Residential openings don't come up often. Sign up once and we'll reach out directly when a home like this one becomes available.</p>
+    </div>
+    <div class="updates-card">
+      <form class="updates-form" id="updatesForm" novalidate>
+        <div class="channel-select" role="radiogroup" aria-label="How should we send updates?">
+          <label class="channel-opt recommended">
+            <input type="radio" name="channel" value="Text" checked>
+            <span class="card">
+              <span class="badge">Fastest</span><br>
+              <span class="title">Text Me</span>
+              <span class="sub">A quick text the moment a home opens</span>
+            </span>
+          </label>
+          <label class="channel-opt">
+            <input type="radio" name="channel" value="Both">
+            <span class="card">
+              <span class="title">Text &amp; Email</span>
+              <span class="sub">Both, so you never miss one</span>
+            </span>
+          </label>
+          <label class="channel-opt subtle">
+            <input type="radio" name="channel" value="Email">
+            <span class="card">
+              <span class="title">Email only, if you'd rather not text</span>
+            </span>
+          </label>
+        </div>
+
+        <div class="field-group">
+          <div>
+            <label for="updName">Name</label>
+            <input type="text" id="updName" name="name" autocomplete="name" required>
+          </div>
+          <div class="field-row">
+            <div id="updPhoneWrap">
+              <label for="updPhone">Mobile phone</label>
+              <input type="tel" id="updPhone" name="phone" autocomplete="tel" placeholder="(804) 555-0123">
+            </div>
+            <div id="updEmailWrap" class="field-hidden">
+              <label for="updEmail">Email</label>
+              <input type="email" id="updEmail" name="email" autocomplete="email" placeholder="you@example.com">
+            </div>
+          </div>
+          <div class="updates-honeypot" aria-hidden="true">
+            <label for="updCompany">Company</label>
+            <input type="text" id="updCompany" name="company" tabindex="-1" autocomplete="off">
+          </div>
+        </div>
+
+        <p class="updates-consent">By signing up you agree to receive updates about Sponsored Residential openings from Arch Support Residential Services by the method(s) selected above. Msg &amp; data rates may apply. Reply STOP to unsubscribe at any time. We won't share your information.</p>
+
+        <button type="submit" class="btn btn-primary updates-submit" id="updatesSubmit">
+          <span class="btn-label">Sign Up for Updates</span>
+        </button>
+        <div class="updates-status" id="updatesStatus" role="status" aria-live="polite"></div>
+      </form>
+    </div>
+  </div>
+</section>
+
 <footer>
   <div class="wrap">
     <p>Arch Support Residential Services · Sponsored Residential Provider Network · Emporia, VA</p>
@@ -543,6 +754,99 @@
       if (label) { label.textContent = 'Text to Show Interest'; }
     });
   }
+
+  // Get Updates signup form — general/reusable component that POSTs to a
+  // Netlify Function, which stages the signup for sync into Constant
+  // Contact. Nudges visitors toward Text/Both by making Text the default,
+  // most prominent choice; Email-only is present but visually subdued.
+  (function () {
+    var form = document.getElementById('updatesForm');
+    if (!form) return;
+
+    var phoneWrap = document.getElementById('updPhoneWrap');
+    var emailWrap = document.getElementById('updEmailWrap');
+    var phoneInput = document.getElementById('updPhone');
+    var emailInput = document.getElementById('updEmail');
+    var statusEl = document.getElementById('updatesStatus');
+    var submitBtn = document.getElementById('updatesSubmit');
+
+    function syncFields() {
+      var channel = form.querySelector('input[name="channel"]:checked').value;
+      var showPhone = channel === 'Text' || channel === 'Both';
+      var showEmail = channel === 'Email' || channel === 'Both';
+      phoneWrap.classList.toggle('field-hidden', !showPhone);
+      emailWrap.classList.toggle('field-hidden', !showEmail);
+      phoneInput.required = showPhone;
+      emailInput.required = showEmail;
+    }
+    form.querySelectorAll('input[name="channel"]').forEach(function (r) {
+      r.addEventListener('change', syncFields);
+    });
+    syncFields();
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      statusEl.textContent = '';
+      statusEl.className = 'updates-status';
+
+      var channel = form.querySelector('input[name="channel"]:checked').value;
+      var name = document.getElementById('updName').value.trim();
+      var phone = phoneInput.value.trim();
+      var email = emailInput.value.trim();
+
+      if (!name) {
+        statusEl.textContent = 'Please enter your name.';
+        statusEl.className = 'updates-status err';
+        return;
+      }
+      if ((channel === 'Text' || channel === 'Both') && phone.replace(/\D/g, '').length < 10) {
+        statusEl.textContent = 'Please enter a valid 10-digit mobile number.';
+        statusEl.className = 'updates-status err';
+        return;
+      }
+      if ((channel === 'Email' || channel === 'Both') && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        statusEl.textContent = 'Please enter a valid email address.';
+        statusEl.className = 'updates-status err';
+        return;
+      }
+
+      submitBtn.disabled = true;
+      submitBtn.querySelector('.btn-label').textContent = 'Signing Up…';
+
+      fetch('/.netlify/functions/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: name,
+          phone: phone,
+          email: email,
+          channel: channel,
+          sourcePage: window.location.href,
+          company: document.getElementById('updCompany').value
+        })
+      })
+        .then(function (res) { return res.json().then(function (data) { return { ok: res.ok, data: data }; }); })
+        .then(function (result) {
+          if (result.ok) {
+            statusEl.textContent = "You're signed up — thank you!";
+            statusEl.className = 'updates-status ok';
+            form.reset();
+            syncFields();
+          } else {
+            statusEl.textContent = (result.data && result.data.error) || 'Something went wrong. Please try again.';
+            statusEl.className = 'updates-status err';
+          }
+        })
+        .catch(function () {
+          statusEl.textContent = 'Something went wrong. Please try again.';
+          statusEl.className = 'updates-status err';
+        })
+        .finally(function () {
+          submitBtn.disabled = false;
+          submitBtn.querySelector('.btn-label').textContent = 'Sign Up for Updates';
+        });
+    });
+  })();
 </script>
 </body>
 </html>
