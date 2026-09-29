@@ -59,7 +59,7 @@ function renderEmptyState() {
       </div>`;
 }
 
-function buildPage(cardsHtml) {
+function buildPage(cardsHtml, ctaHref) {
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -307,7 +307,7 @@ ${cardsHtml}
         <h3>Don't see an opening near you yet?</h3>
         <p>Sign up for text or email updates and we'll reach out the moment a new home opens.</p>
       </div>
-      <a class="btn" href="/#updates">Get Updates</a>
+      <a class="btn" href="${esc(ctaHref)}">Get Updates</a>
     </div>
 
   </div>
@@ -336,7 +336,11 @@ function main() {
     ? openHomes.map(renderCard).join("\n\n")
     : renderEmptyState();
 
-  const html = buildPage(cardsHtml);
+  const ctaHref = openHomes.length
+    ? `${openHomes[0].pagePath}#updates`
+    : "/#updates";
+
+  const html = buildPage(cardsHtml, ctaHref);
   fs.writeFileSync(OUTPUT_PATH, html, "utf8");
   console.log(
     `Wrote ${OUTPUT_PATH} with ${openHomes.length} open home(s): ` +
