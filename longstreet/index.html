@@ -774,7 +774,7 @@
         <input type="hidden" name="form-name" value="interest">
         <input type="hidden" name="home" value="Longstreet (Highland Springs, VA)">
         <div class="cm-hp" aria-hidden="true"><label>Don’t fill this out <input name="bot-field" tabindex="-1" autocomplete="off"></label></div>
-        <div class="cm-field"><label for="cmName">Name (optional)</label><input type="text" id="cmName" name="name" autocomplete="name"></div>
+        <div class="cm-field"><label for="cmName">Your name</label><input type="text" id="cmName" name="name" autocomplete="name"></div>
         <div class="cm-field"><label for="cmEmail">Email</label><input type="email" id="cmEmail" name="email" autocomplete="email" placeholder="you@example.com"></div>
         <div class="cm-field"><label for="cmPhone">Phone</label><input type="tel" id="cmPhone" name="phone" autocomplete="tel" placeholder="(804) 555-0123"></div>
         <button type="submit" class="btn btn-primary cm-submit" id="cmSubmit"><span class="btn-label">Send</span></button>
@@ -813,8 +813,12 @@
       statusEl.textContent = ''; statusEl.className = 'cm-status';
       var email = document.getElementById('cmEmail').value.trim();
       var phone = document.getElementById('cmPhone').value.trim();
+      if (!document.getElementById('cmName').value.trim()) {
+        statusEl.textContent = 'Please enter your name.';
+        statusEl.className = 'cm-status err'; document.getElementById('cmName').focus(); return;
+      }
       if (!email && !phone) {
-        statusEl.textContent = 'Please enter an email or a phone number so we can reach you.';
+        statusEl.textContent = 'Please enter an email address or a phone number (at least one) so we can reach you.';
         statusEl.className = 'cm-status err'; return;
       }
       if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
