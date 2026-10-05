@@ -82,9 +82,19 @@
   }
   .back-link:hover{color:var(--cream);}
   .back-link svg{width:15px; height:15px; stroke:currentColor; fill:none; stroke-width:2.2;}
-  .header-updates-btn{
+  .header-nav .header-updates-btn{
     padding:10px 18px;
     font-size:13.5px;
+  }
+  @media (max-width:560px){
+    .logo-text{display:none;}
+    .back-text{display:none;}
+    .logo-mark{flex-shrink:0;}
+    .logo-mark img{height:34px;}
+    header .wrap{padding:0 14px;}
+    header .wrap{flex-wrap:nowrap; gap:8px;}
+    .header-nav{gap:8px; flex-wrap:nowrap;}
+    .header-nav .header-updates-btn{padding:9px 10px; font-size:12px; white-space:nowrap;}
   }
 
   /* Hero — arch motif */
@@ -538,9 +548,10 @@
     <div class="header-nav">
       <a class="back-link" href="/openings/">
         <svg viewBox="0 0 24 24"><path d="M19 12H5M11 18l-6-6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        All Openings
+        <span class="back-text">All Openings</span>
       </a>
-      <a class="btn btn-primary header-updates-btn" href="#updates">Get Updates</a>
+      <a class="btn btn-ghost header-updates-btn" href="#updates">Get Updates</a>
+      <a class="btn btn-primary header-updates-btn smart-interest-btn" data-keep-label href="mailto:archera@archsupportres.com?subject=Interested%20in%20Emporia%20Sponsor%20Opening&amp;body=Hi%20Anthony%2C%0D%0A%0D%0AI%27m%20reaching%20out%20about%20the%20Sponsored%20Residential%20opening%20in%20Emporia%2C%20VA%20(23847).%20I%27d%20like%20to%20learn%20more.%0D%0A%0D%0AThank%20you!"><span class="btn-label">I'm Interested</span></a>
     </div>
   </div>
 </header>
@@ -781,7 +792,7 @@
     document.querySelectorAll('.smart-interest-btn').forEach(function (btn) {
       btn.setAttribute('href', smsHref);
       var label = btn.querySelector('.btn-label');
-      if (label) { label.textContent = 'Text to Show Interest'; }
+      if (label && !btn.hasAttribute('data-keep-label')) { label.textContent = 'Text to Show Interest'; }
     });
   }
 
