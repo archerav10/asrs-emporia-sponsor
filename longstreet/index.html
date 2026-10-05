@@ -483,6 +483,21 @@
     .updates-form .field-row{grid-template-columns:1fr;}
   }
 
+
+  /* Desktop "I'm interested" chooser (mailto: does nothing for people without a desktop mail app) */
+  .contact-modal{position:fixed; inset:0; z-index:300; display:none; align-items:center; justify-content:center; padding:20px; background:rgba(0,0,0,0.55);}
+  .contact-modal.open{display:flex;}
+  .contact-modal-card{background:#fff; color:var(--ink); border-radius:18px; padding:30px 28px 26px; max-width:420px; width:100%; box-shadow:0 30px 60px rgba(0,0,0,0.35); position:relative;}
+  .contact-modal-card h3{font-size:22px; margin:0 0 6px; color:var(--green-deep);}
+  .contact-modal-card p.sub{margin:0 0 18px; font-size:14.5px; color:#5b564f;}
+  .contact-modal-close{position:absolute; top:10px; right:14px; background:none; border:none; font-size:26px; line-height:1; cursor:pointer; color:#7a746a;}
+  .cm-opt{display:block; width:100%; text-align:center; padding:13px 16px; margin-bottom:10px; border-radius:12px; border:1.5px solid #E3DDCF; background:#fff; color:var(--ink); font:600 15px 'Work Sans',sans-serif; text-decoration:none; cursor:pointer;}
+  .cm-opt:hover{border-color:var(--green); background:rgba(0,92,67,0.05);}
+  .cm-opt.primary{background:var(--green-deep); border-color:var(--green-deep); color:#fff;}
+  .cm-opt.primary:hover{background:var(--green);}
+  .cm-foot{margin-top:6px; font-size:13.5px; color:#5b564f; text-align:center;}
+  .cm-foot a{font-weight:700; text-decoration:none; color:var(--green-deep);}
+
   footer{
     background:var(--ink);
     border-top:1px solid var(--line);
@@ -753,6 +768,47 @@
       btn.setAttribute('href', smsHref);
       var label = btn.querySelector('.btn-label');
       if (label && !btn.hasAttribute('data-keep-label')) { label.textContent = 'Text to Show Interest'; }
+    });
+  } else {
+    // Desktop: many people have no default mail app, so a bare mailto: link
+    // does nothing for them. Show a small chooser (Gmail / Outlook / mail app).
+    var mailParts = document.querySelector('.smart-interest-btn').getAttribute('href').replace(/^mailto:/, '').split('?');
+    var mailTo = decodeURIComponent(mailParts[0]);
+    var mailQ = new URLSearchParams(mailParts[1] || '');
+    var mailSubject = mailQ.get('subject') || '';
+    var mailBody = mailQ.get('body') || '';
+    var enc = encodeURIComponent;
+    var gmailUrl = 'https://mail.google.com/mail/?view=cm&fs=1&to=' + enc(mailTo) + '&su=' + enc(mailSubject) + '&body=' + enc(mailBody);
+    var outlookUrl = 'https://outlook.office.com/mail/deeplink/compose?to=' + enc(mailTo) + '&subject=' + enc(mailSubject) + '&body=' + enc(mailBody);
+    var mailtoUrl = 'mailto:' + mailTo + '?subject=' + enc(mailSubject) + '&body=' + enc(mailBody);
+
+    var modal = document.createElement('div');
+    modal.className = 'contact-modal';
+    modal.setAttribute('role', 'dialog');
+    modal.setAttribute('aria-modal', 'true');
+    modal.innerHTML =
+      '<div class="contact-modal-card">' +
+        '<button type="button" class="contact-modal-close" aria-label="Close">&times;</button>' +
+        '<h3>Interested? Let\u2019s talk.</h3>' +
+        '<p class="sub">Choose how you\u2019d like to email Anthony. A message is already written for you.</p>' +
+        '<a class="cm-opt primary" target="_blank" rel="noopener" href="' + gmailUrl + '">Open in Gmail</a>' +
+        '<a class="cm-opt" target="_blank" rel="noopener" href="' + outlookUrl + '">Open in Outlook</a>' +
+        '<a class="cm-opt" href="' + mailtoUrl + '">Use my computer\u2019s email app</a>' +
+        '<button type="button" class="cm-opt" id="cmCopy">Copy email address</button>' +
+        '<div class="cm-foot">Or call or text <a href="tel:+18043999709">(804) 399-9709</a></div>' +
+      '</div>';
+    document.body.appendChild(modal);
+    function closeModal() { modal.classList.remove('open'); }
+    modal.addEventListener('click', function (e) { if (e.target === modal) closeModal(); });
+    modal.querySelector('.contact-modal-close').addEventListener('click', closeModal);
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeModal(); });
+    modal.querySelector('#cmCopy').addEventListener('click', function () {
+      var b = this;
+      function done() { b.textContent = 'Copied: ' + mailTo; }
+      if (navigator.clipboard && navigator.clipboard.writeText) { navigator.clipboard.writeText(mailTo).then(done, done); } else { done(); }
+    });
+    document.querySelectorAll('.smart-interest-btn').forEach(function (btn) {
+      btn.addEventListener('click', function (e) { e.preventDefault(); modal.classList.add('open'); });
     });
   }
 
