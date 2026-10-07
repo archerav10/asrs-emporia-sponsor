@@ -8,7 +8,9 @@ Longstreet Dashboard page.
 Data source: `collection://618a4b72-ab89-4c12-856c-8d7c51b29984`
 
 Columns: Home Name, City/State, Zip Code, Vacancy Status (Open / Filled /
-Coming Soon), Opening Date, Short Description, Page Path, Hero Photo Path.
+Coming Soon), Opening Date, Short Description, Page Path, Hero Photo Path,
+Home Type (Group Home / Sponsored Residential — shown as the badge on the
+opposite side of the photo from "Open Now"; saved as `homeType` in the JSON).
 
 **Pipeline:**
 1. A scheduled Claude task queries that Notion database.

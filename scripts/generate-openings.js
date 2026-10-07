@@ -36,10 +36,11 @@ function renderCard(home) {
   const zip = esc(home.zip || "");
   const desc = esc(home.description || "");
   const posted = esc(formatPosted(home.openingDate));
+  const type = home.homeType ? `\n          <span class="listing-badge listing-type">${esc(home.homeType)}</span>` : "";
   return `      <a class="listing-card" href="${href}">
         <div class="listing-photo">
           <img src="../${photo}" alt="Photo of the home in ${name}">
-          <span class="listing-badge">Open Now</span>
+          <span class="listing-badge">Open Now</span>${type}
         </div>
         <div class="listing-body">
           <div class="listing-location">${name}</div>
@@ -55,7 +56,7 @@ function renderCard(home) {
 
 function renderEmptyState() {
   return `      <div class="empty-state">
-        <p>No open Sponsored Residential vacancies right now — check back soon, or sign up below to be notified the moment one opens.</p>
+        <p>No residential openings right now — check back soon, or sign up below to be notified the moment one opens.</p>
       </div>`;
 }
 
@@ -65,8 +66,8 @@ function buildPage(cardsHtml, ctaHref) {
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Current Openings | Arch Support Residential Services</title>
-<meta name="description" content="Current Sponsored Residential Provider openings from Arch Support Residential Services. See every home with an opening and learn more about each one.">
+<title>Current Residential Openings | Arch Support Residential Services</title>
+<meta name="description" content="Current Sponsored Residential and Group Home openings from Arch Support Residential Services. See every home with an opening and learn more about each one.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Petit+Formal+Script&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -198,6 +199,7 @@ function buildPage(cardsHtml, ctaHref) {
     border-radius:999px;
     box-shadow:0 4px 10px rgba(0,0,0,0.2);
   }
+  .listing-type{left:auto; right:14px; background:var(--green-deep); color:var(--cream);}
   .listing-body{padding:22px 24px 26px;}
   .listing-location{
     font-family:'Fraunces',serif;
@@ -283,15 +285,15 @@ function buildPage(cardsHtml, ctaHref) {
       <img src="../images/logo.jpg" alt="Arch Support Residential Services logo">
       <div class="logo-text"><strong>Arch Support</strong>Residential Services</div>
     </div>
-    <div class="header-tag">Sponsored Residential Provider</div>
+    <div class="header-tag">Sponsored Residential &amp; Group Home Provider</div>
   </div>
 </header>
 
 <section class="hero">
   <div class="wrap">
-    <span class="eyebrow">Current Openings</span>
-    <h1>Homes with a Sponsored Residential opening right now</h1>
-    <p class="lede">Below are every one of our homes currently looking for a Sponsored Residential Provider match. Tap a home to see photos, amenities, and how to get in touch — sorted with the newest opening first.</p>
+    <span class="eyebrow">Residential Openings</span>
+    <h1>Residential openings available right now</h1>
+    <p class="lede">Below are all of our homes with a current opening, whether a Sponsored Residential or Group Home setting. Tap a home to see photos, amenities, and how to get in touch — listed with the earliest opening first.</p>
   </div>
 </section>
 
@@ -315,7 +317,7 @@ ${cardsHtml}
 
 <footer>
   <div class="wrap">
-    <p>Arch Support Residential Services · Sponsored Residential Provider Network</p>
+    <p>Arch Support Residential Services · Sponsored Residential &amp; Group Home Provider Network</p>
   </div>
 </footer>
 
